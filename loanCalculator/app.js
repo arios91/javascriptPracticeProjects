@@ -47,7 +47,6 @@ function calculateResults(){
         showError('Please check your numbers');
     }
     loader.style.display = 'none';
-    console.log('test');
 }
 
 function showError(error){
