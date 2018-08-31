@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guesser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+    <style>
+        #playAgainButton{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Guesser</h1>
+        <div id="game">
+            <p>Guess a number <span class="minNum"></span> and <span class="maxNum"></span></p>
+            <input id="guessInput" type="number" placeholder="Enter a number">
+            <input id="guessButton" type="submit" value="Submit">
+            <input id="playAgainButton" type="submit" value="Play Again">
+            <p class="message"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
