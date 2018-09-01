@@ -1,33 +1,26 @@
-//person constructor
-function Person(firstName, lastName){
-    this.firstName = firstName;
-    this.lastName = lastName;
+class Person{
+    constructor(fname, lname){
+        this.fname = fname;
+        this.lname = lname;
+    }
+
+    greeting(){
+        return `Hello, my name is ${this.fname} ${this.lname}`;
+    }
 }
 
-//greeting
-Person.prototype.greeting = function(){
-    return `Hello there ${this.firstName} ${this.lastName}`;
+class Customer extends Person{
+    constructor(fname, lname, phone, membership){
+        super(fname, lname);
+        this.phone = phone;
+        this.membership = membership;
+    }
+
+    static getMembershipCost(){
+        return this.membership === 'admin' ? 10 : 35;
+    }
 }
 
-
-//customer constructor
-function Customer(firstName, lastName, phone, membership){
-    Person.call(this, firstName, lastName);
-    this.phone = phone;
-    this.membership = membership;
-}
-
-//inherit person prototype
-Customer.prototype = Object.create(Person.prototype);
-//make customer.prototype return Customer
-Customer.prototype.constructor = Customer;
-
-const person1 = new Person('Alex', 'Rios');
-const customer1 = new Customer('Alex', 'Rios', '956-529-6849', 'Admin');
-
-console.log(person1.greeting());
-
-Customer.prototype.greeting = function(){
-    return `Hello there ${this.firstName} ${this.lastName}, welcome to our company`;
-}
-console.log(customer1.Person.greeting());
+const alex = new Customer('Alex', 'Rios', '956-529-6849', 'admin');
+console.log(alex);
+console.log(alex.greeting());
